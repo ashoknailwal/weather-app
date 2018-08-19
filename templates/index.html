@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <form action="getTemp" method="POST">
+        <div class="form-group col-xs-6 col-xs-offset-3">
+            <label for="cityName">Enter City</label>
+            <div class="input-group">
+                <input type="text" name="city" id="cityName" class="form-control" />
+                <span class="input-group-btn">
+                    <button type="submit" class="btn btn-primary">Check</button>
+                </span>
+            </div>
+    </form>
+    </br>
+    {{#if temperature}} 
+        {{#if temperature.temp}} 
+            <div class="alert alert-success">{{temperature.temp }}&#8451 </div>
+        {{else}}
+            <div class="alert alert-danger">Please Enter a valid city</div>{{/if}} 
+    {{/if}}
+    </div>
+</body>
+
+</html>
